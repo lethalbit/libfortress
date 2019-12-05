@@ -1,0 +1,6 @@
+queries:
+  - include: "*"
+  - include:
+      id: "cpp/todo-comment"
+  - include:
+      id: "cpp/fixme-comment"

@@ -1,0 +1,15 @@
+codecov:
+  notify:
+    require_ci_to_pass: yes
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      method: yes
+      loop: yes
+
+
+ignore:
+  - "third_party/.*"
+  - "test/.*"
