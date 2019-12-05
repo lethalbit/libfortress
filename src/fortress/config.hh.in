@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+/* config.hh - Build-time configuration for libfortress*/
+@AUTOGEN_HEADER@
+#pragma once
+#ifndef _LIBFORTRESS_CONFIG_HH_
+#define _LIBFORTRESS_CONFIG_HH_
+
+#include <string>
+using std::literals::string_literals::operator ""s;
+
+namespace fortress::config {
+	/* Version information */
+	static const std::string version{"@VERSION_NUMBER@"s};
+	static const std::string compiler{"@COMPILER@"s};
+	static const std::string compiler_version{"@COMPILER_VERSION@"s};
+	static const std::string git_hash{"@GIT_HASH@"s};
+
+	/* Platform information */
+	static const std::string target_system{"@TARGET_SYS@"s};
+	static const std::string target_arch{"@TARGET_ARCH@"s};
+
+	static const std::string build_system{"@BUILD_SYS@"s};
+	static const std::string build_arch{"@BUILD_ARCH@"s};
+}
+
+#endif /* _LIBFORTRESS_CONFIG_HH_ */

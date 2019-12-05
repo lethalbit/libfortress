@@ -1,0 +1,4 @@
+option('formats', type: 'array', choices: ['dwarf', 'stabs', 'pdb'], value: ['dwarf', 'stabs', 'pdb'], description: 'Types of debugging formats you want fortress to support')
+option('dwarf_versions', type: 'array', choices: ['v1', 'v2', 'v3', 'v4', 'v5'], value: ['v1', 'v2', 'v3', 'v4', 'v5'], description: 'Versions of the DWARF debugging format you wish for fortress to t support')
+option('gen_docs', type: 'boolean', value: true, description: 'Generate documentation for libfortress')
+option('python_bindings', type: 'boolean', value: true, description: 'Build the libfortress Python 3 bindings')
