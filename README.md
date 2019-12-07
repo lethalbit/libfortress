@@ -1,4 +1,4 @@
-# `libfortress`
+# `libfortress` [![Build Status](https://travis-ci.org/lethalbit/libfortress.svg?branch=master)](https://travis-ci.org/lethalbit/libfortress) [![codecov](https://codecov.io/gh/lethalbit/libfortress/branch/master/graph/badge.svg)](https://codecov.io/gh/lethalbit/libfortress) 
 `libfortress` is a C++ library designed to be able to parse and write debug information in various formats, including DWARF and STABS.
 
 ## Requirements
