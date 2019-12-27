@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
-/* v5/tag.hh - DWARF3 Tag definitions and helpers */
+/* v5/tag.hh - DWARF5 Tag definitions and helpers */
 #pragma once
 #if !defined(_LIBFORTRESS_FORMATS_DWARF_V5_TAG_HH_)
 #define _LIBFORTRESS_FORMATS_DWARF_V5_TAG_HH_

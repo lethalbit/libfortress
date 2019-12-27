@@ -4,3 +4,8 @@ install_headers(
 	],
 	subdir: 'fortress/formats/dwarf/v3'
 )
+
+fortress_srcs += [
+	'formats/dwarf/v3/tag.cc',
+]
+
