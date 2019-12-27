@@ -23,6 +23,7 @@ install_headers(cfg_header, subdir: 'fortress')
 libfortress = library(
 	'fortress',
     fortress_srcs,
+    gnu_symbol_visibility: 'inlineshidden',
     include_directories: [
     	include_directories('..'),
     ],
