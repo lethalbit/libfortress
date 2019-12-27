@@ -1,3 +1,16 @@
+extraction:
+  cpp:
+    after_prepare:
+      - pip3 install --upgrade setuptools wheel
+      - pip3 install --upgrade meson
+    configure:
+      command:
+        - meson build
+    index:
+      build_command:
+        - cd build
+        - ninja
+
 queries:
   - include: "*"
   - include:
