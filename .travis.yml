@@ -57,9 +57,9 @@ jobs:
         - cp ninja ~/.local/bin/
         - popd
 
-        - pip3 install --user wheel
-        - pip3 install --user meson
-        - pip3 install --user codecov
+        - sudo pip3 install --user wheel
+        - sudo pip3 install --user meson
+        - sudo pip3 install --user codecov
 
 script:
   - meson -Db_coverage=true -Db_sanitize=address,undefined build
