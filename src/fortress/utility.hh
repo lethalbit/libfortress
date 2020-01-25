@@ -8,6 +8,7 @@
 #include <string>
 #include <utility>
 #include <type_traits>
+#include <vector>
 
 #include <fortress/common.hh>
 
