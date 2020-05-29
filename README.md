@@ -1,4 +1,5 @@
-# `libfortress` [![Build Status](https://travis-ci.org/lethalbit/libfortress.svg?branch=master)](https://travis-ci.org/lethalbit/libfortress) [![codecov](https://codecov.io/gh/lethalbit/libfortress/branch/master/graph/badge.svg)](https://codecov.io/gh/lethalbit/libfortress) 
+# `libfortress` [![Build Status](https://travis-ci.org/lethalbit/libfortress.svg?branch=master)](https://travis-ci.org/lethalbit/libfortress) [![codecov](https://codecov.io/gh/lethalbit/libfortress/branch/master/graph/badge.svg)](https://codecov.io/gh/lethalbit/libfortress) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flethalbit%2Flibfortress.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flethalbit%2Flibfortress?ref=badge_shield)
+
 `libfortress` is a C++ library designed to be able to parse and write debug information in various formats, including DWARF and STABS.
 
 ## Requirements
@@ -83,3 +84,6 @@ If you wish to change the defaults, see `meson configure` for a comprehensive li
 
 ## License
 libfortress is licensed under the LGPL, the full license is available in the [LICENSE](LICENSE) file.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flethalbit%2Flibfortress.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flethalbit%2Flibfortress?ref=badge_large)
