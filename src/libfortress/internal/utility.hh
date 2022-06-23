@@ -4,6 +4,8 @@
 #if !defined(libfortress_internal_utility_hh)
 #define libfortress_internal_utility_hh
 
+#include <libfortress/internal/defs.hh>
+
 #include <cstdint>
 #include <type_traits>
 #include <array>
@@ -24,6 +26,19 @@ namespace Fortress::Internal {
 		constexpr std::uint64_t operator ""_GB(const unsigned long long value) noexcept { return std::uint64_t(value) * 1000000000; }
 		constexpr std::uint64_t operator ""_TB(const unsigned long long value) noexcept { return std::uint64_t(value) * 1000000000000; }
 		constexpr std::uint64_t operator ""_PB(const unsigned long long value) noexcept { return std::uint64_t(value) * 1000000000000000; }
+	}
+
+	namespace Types {
+		#if defined(_WINDOWS)
+		#	if defined(_WIN64)
+			using ssize_t = __int64;
+		#	else
+			using ssize_t = int;
+		#	endif
+		#else
+		using ssize_t = typename std::make_signed<std::size_t>::type;
+		using off_t = std::int64_t;
+		#endif
 	}
 
 	template<typename T>
@@ -59,6 +74,31 @@ namespace Fortress::Internal {
 
 	template<typename T>
 	using value_t = typename T::value_type;
+
+
+	template<typename T, bool = std::is_unsigned_v<T>>
+	struct promoted_type;
+
+	template<typename T>
+	struct promoted_type<T, true> { using type = std::uint32_t; };
+
+	template<typename T>
+	struct promoted_type<T, false> { using type = std::int32_t; };
+
+	template<>
+	struct promoted_type<std::uint64_t, true> { using type = std::uint64_t; };
+
+	template<>
+	struct promoted_type<std::int64_t, false> { using type = std::int64_t; };
+
+	template<>
+	struct promoted_type<std::size_t, !std::is_same_v<std::uint64_t, std::size_t>> { using type = std::size_t; };
+
+	template<>
+	struct promoted_type<Types::ssize_t, std::is_same_v<std::int64_t, Types::ssize_t>> { using type = Types::ssize_t; };
+
+	template<typename T>
+	using promoted_type_t = typename promoted_type<T>::type;
 }
 
 #endif /* libfortress_internal_utility_hh */
