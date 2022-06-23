@@ -32,15 +32,3 @@ option(
 	value: true,
 	description: 'Build the python bindings (only if build_bindings is enabled)'
 )
-
-option(
-	'formats',
-	type: 'array',
-	choices: [
-		'dwarf', 'stabs', 'pdb', 'vms'
-	],
-	value: [
-		'dwarf', 'stabs', 'pdb', 'vms'
-	],
-	description: 'Debug formats to build support for (defaults to all)'
-)
