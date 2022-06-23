@@ -12,10 +12,13 @@ config.set('COMPILER_VERSION', cxx.version())
 config.set('TARGET_SYS', target_machine.system())
 config.set('TARGET_ARCH', target_machine.cpu())
 config.set('TARGET_ENDIAN', 'endian_t::@0@'.format(target_machine.endian()))
+config.set('TARGET_WIDTH', meson.get_compiler('cpp', native: false).sizeof('void*'))
 
 config.set('BUILD_SYS', build_machine.system())
 config.set('BUILD_ARCH', build_machine.cpu())
 config.set('BUILD_ENDIAN', 'endian_t::@0@'.format(build_machine.endian()))
+config.set('BUILD_WIDTH', meson.get_compiler('cpp', native: true).sizeof('void*'))
+
 
 ## Misc
 config.set('BUGREPORT_URL', get_option('bugreport_url'))
