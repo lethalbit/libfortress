@@ -46,10 +46,26 @@ config_header = configure_file(
 library_deps = [
 	zlib,
 ]
-library_hdrs = files([])
-library_srcs = files([])
+library_hdrs = files([
+  'dwarf.hh',
+  'pdb.hh',
+  'stabs.hh',
+  'vms.hh',
+])
+
+library_srcs = files([
+  'dwarf.cc',
+  'pdb.cc',
+  'stabs.cc',
+  'vms.cc',
+])
 
 subdir('internal')
+
+subdir('dwarf')
+subdir('pdb')
+subdir('stabs')
+subdir('vms')
 
 libfortress = library(
 	'libfortress',
