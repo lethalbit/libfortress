@@ -49,6 +49,8 @@ library_deps = [
 library_hdrs = files([])
 library_srcs = files([])
 
+subdir('internal')
+
 libfortress = library(
 	'libfortress',
 	library_srcs,
