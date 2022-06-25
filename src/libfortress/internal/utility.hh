@@ -103,6 +103,17 @@ namespace Fortress::Internal {
 
 	template<typename T>
 	using promoted_type_t = typename promoted_type<T>::type;
+
+	/* Helper methods */
+	[[nodiscard]]
+	inline constexpr bool is_be() noexcept {
+		return Fortress::Config::target_endian == Fortress::Config::endian_t::big;
+	}
+
+	[[nodiscard]]
+	inline constexpr bool is_le() noexcept {
+		return  Fortress::Config::target_endian == Fortress::Config::endian_t::little;
+	}
 }
 
 #endif /* libfortress_internal_utility_hh */
