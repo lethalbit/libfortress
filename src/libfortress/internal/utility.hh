@@ -4,12 +4,21 @@
 #if !defined(libfortress_internal_utility_hh)
 #define libfortress_internal_utility_hh
 
+#include <libfortress/config.hh>
 #include <libfortress/internal/defs.hh>
 
 #include <cstdint>
 #include <type_traits>
 #include <array>
 #include <vector>
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#ifndef _MSC_VER
+#	include <unistd.h>
+#else
+#	include <io.h>
+#endif
 
 namespace Fortress::Internal {
 	namespace Units {
@@ -31,6 +40,7 @@ namespace Fortress::Internal {
 	namespace Types {
 		#if defined(_WINDOWS)
 			using mode_t = std::int32_t;
+			using stat_t = struct ::_stat64;
 		#	if defined(_WIN64)
 			using ssize_t = __int64;
 			using off_t   = std::int64_t;
@@ -39,6 +49,7 @@ namespace Fortress::Internal {
 			using off_t   = std::int32_t;
 		#	endif
 		#else
+		using stat_t  = struct ::stat;
 		using mode_t  = std::int32_t;
 		using ssize_t = typename std::make_signed<std::size_t>::type;
 		using off_t   = std::int64_t;
