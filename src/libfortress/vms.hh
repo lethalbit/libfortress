@@ -4,5 +4,8 @@
 #if !defined(libfortress_vms_hh)
 #define libfortress_vms_hh
 
+namespace Fortress::VMS {
+
+}
 
 #endif /* libfortress_vms_hh */

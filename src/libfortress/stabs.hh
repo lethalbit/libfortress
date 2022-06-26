@@ -4,5 +4,8 @@
 #if !defined(libfortress_stabs_hh)
 #define libfortress_stabs_hh
 
+namespace Fortress::STABS {
+
+}
 
 #endif /* libfortress_stabs_hh */

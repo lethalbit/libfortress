@@ -4,5 +4,8 @@
 #if !defined(libfortress_pdb_hh)
 #define libfortress_pdb_hh
 
+namespace Fortress::PDB {
+
+}
 
 #endif /* libfortress_pdb_hh */
